@@ -14,6 +14,10 @@
   --color-gold:#e3a73a;
   --color-ember:#f06a2c;
   --color-ember-deep:#d4551a;
+  --color-orange-bar:#d9480f;
+  --color-ozon:#005bff;
+  --color-ozon-deep:#0046c8;
+  --color-ozon-pink:#f91155;
   --color-white:#fff;
   --font-display:"Yanone Kaffeesatz","Arial Narrow",sans-serif;
   --font-body:"Literata",Georgia,serif;
@@ -68,11 +72,11 @@ h3{font-weight:600;line-height:1.05}
 .h-mega{max-width:13ch;margin-inline:auto;text-shadow:0 2px 30px rgba(10,50,90,.35)}
 .hero-lead{margin:24px auto 30px;max-width:60ch;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6;text-shadow:0 1px 14px rgba(10,50,90,.5)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-.hero-facts{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);color:var(--color-ink)}
+.hero-facts{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:var(--color-orange-bar);color:var(--color-white)}
 .hero-facts li{display:flex;align-items:center;gap:12px;padding:14px clamp(18px,4vw,56px)}
-.hero-facts li+li{border-left:1px solid rgba(16,38,31,.15)}
-.hero-facts b{font-family:var(--font-display);font-size:2.2rem;line-height:1;color:var(--color-pine);font-weight:700}
-.hero-facts span{font-size:.95rem;line-height:1.25;max-width:14ch;color:var(--color-ink-soft)}
+.hero-facts li+li{border-left:1px solid rgba(255,255,255,.35)}
+.hero-facts b{font-family:var(--font-display);font-size:2.2rem;line-height:1;color:var(--color-white);font-weight:700}
+.hero-facts span{font-size:1rem;line-height:1.25;max-width:14ch;color:var(--color-white)}
 .hero-in>*{opacity:0;transform:translateY(26px);animation:rise .9s var(--ease-out) forwards}
 .hero-in>*:nth-child(2){animation-delay:.18s}.hero-in>*:nth-child(3){animation-delay:.32s}
 @keyframes rise{to{opacity:1;transform:none}}
@@ -221,7 +225,7 @@ h3{font-weight:600;line-height:1.05}
   .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .hero-facts li{flex-direction:column;text-align:center;gap:2px;padding:10px 6px}
   .hero-facts span{max-width:none}
-  .hero-facts li+li{border-left:1px solid rgba(16,38,31,.15)}
+  .hero-facts li+li{border-left:1px solid rgba(255,255,255,.35)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -237,3 +241,9 @@ h3{font-weight:600;line-height:1.05}
 .size::after{background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.1) 30%,rgba(255,255,255,.5) 50%,rgba(255,255,255,.1) 70%,transparent 100%)}
 @keyframes shine{0%{transform:translateX(-130%) skewX(-18deg)}38%,100%{transform:translateX(330%) skewX(-18deg)}}
 @media (prefers-reduced-motion:reduce){.btn::after,.msg::after,.sticky-buy::after,.size::after,.dish-tabs button::after{display:none}}
+/* кнопки Озона: синий и розовый блик, как у Озона */
+a[href*="ozon.ru"]{background:var(--color-ozon);box-shadow:0 12px 26px -12px rgba(0,91,255,.9)}
+a[href*="ozon.ru"]:hover{background:var(--color-ozon-deep)}
+a[href*="ozon.ru"]::after{background:linear-gradient(100deg,transparent 0%,rgba(249,17,85,.25) 30%,rgba(249,17,85,.95) 50%,rgba(249,17,85,.25) 70%,transparent 100%)}
+.hero-cta a[href*="ozon.ru"]{border-color:var(--color-white)}
+@media (max-width:900px){.hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.hero-facts li{flex-direction:column;text-align:center;gap:2px;padding:10px 6px}.hero-facts span{max-width:none}}
