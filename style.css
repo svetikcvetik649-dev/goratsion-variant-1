@@ -246,3 +246,12 @@ a[href*="ozon.ru"]{background:var(--color-ozon);box-shadow:0 12px 26px -12px rgb
 a[href*="ozon.ru"]:hover{background:var(--color-ozon-deep)}
 a[href*="ozon.ru"]::after{background:linear-gradient(100deg,transparent 0%,rgba(249,17,85,.25) 30%,rgba(249,17,85,.95) 50%,rgba(249,17,85,.25) 70%,transparent 100%)}
 .hero-cta a[href*="ozon.ru"]{border-color:var(--color-white)}
+
+/* кнопка звука на видео */
+.clip-sound{position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:1.15rem;line-height:1;padding:.5em .9em .42em;border-radius:99px;border:0;cursor:pointer;color:var(--color-white);background:rgba(11,47,39,.78);backdrop-filter:blur(8px);transition:background-color .25s,transform .25s var(--ease-out)}
+.clip-sound:hover{background:var(--color-ozon)}
+.clip-sound:active{transform:scale(.96)}
+.clip-sound svg{width:22px;height:22px}
+.clip-sound .on{display:none}
+.clip-sound[aria-pressed="true"] .on{display:inline}
+.clip-sound[aria-pressed="true"] .off{display:none}

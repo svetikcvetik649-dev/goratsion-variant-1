@@ -120,5 +120,15 @@
       es.forEach(function (e) { if (e.isIntersecting) playIfVisible(); else video.pause(); });
     }, { threshold: 0.4 }).observe(clip);
   }
+  // звук: ролики стартуют без звука (так требуют браузеры), включается по кнопке
+  var soundBtn = $('#clipSound');
+  if (soundBtn) soundBtn.addEventListener('click', function () {
+    video.muted = !video.muted;
+    var on = !video.muted;
+    soundBtn.setAttribute('aria-pressed', String(on));
+    soundBtn.setAttribute('aria-label', on ? 'Выключить звук' : 'Включить звук');
+    soundBtn.querySelector('span').textContent = on ? 'Выключить звук' : 'Включить звук';
+    if (on && video.paused && !userPaused) video.play();
+  });
   setDish('borsch', false);
 })();
