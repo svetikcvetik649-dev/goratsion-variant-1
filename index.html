@@ -36,10 +36,7 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <picture>
-    <source media="(max-width:700px)" srcset="assets/photo/hero-m.jpg">
-    <img class="hero-img" id="heroImg" src="assets/photo/hero.jpg" width="2000" height="1125" alt="Палатка и горелка с кастрюлей на горной поляне, вдали заснеженные вершины">
-  </picture>
+  <img class="hero-img" id="heroImg" src="assets/photo/hero-people.jpg" width="2560" height="1124" alt="Два альпиниста отдыхают у оранжевой палатки на снежном склоне, на заднем плане горы и синее небо">
   <div class="hero-in">
     <h1 class="h-mega">Горячий суп там, где нет кухни</h1>
     <p class="hero-lead">Борщ, харчо, гороховый крем-суп и рагу в лёгких пакетах. Засыпать в воду, довести до кипения, и через 10-15 минут обед готов: в горах, на рыбалке, в лесу, на даче.</p>
@@ -79,9 +76,12 @@
     <h2 class="h-big">Четыре блюда, два размера</h2>
     <p class="lead">Каждый пакет собираем вручную, чтобы выдержать рецептуру. Большой пакет на 4-5 порций, малый на 2-3.</p>
 
-    <figure class="lineup">
-      <img src="assets/img/lineup.jpg" width="1400" height="1149" alt="Пакеты ГоРацион: борщ, харчо, гороховый суп и гороховое рагу с овощами" loading="lazy">
-    </figure>
+    <ul class="labels" aria-label="Этикетки блюд">
+      <li><a href="#dish" data-k="borsch"><img src="assets/labels/borsch-big.jpg" width="900" height="796" alt="Этикетка: борщ ГоРацион, 160 г" loading="lazy"><span>Борщ</span></a></li>
+      <li><a href="#dish" data-k="harcho"><img src="assets/labels/harcho-big.jpg" width="900" height="796" alt="Этикетка: харчо ГоРацион, 180 г" loading="lazy"><span>Харчо</span></a></li>
+      <li><a href="#dish" data-k="goroh"><img src="assets/labels/goroh-big.jpg" width="900" height="796" alt="Этикетка: гороховый суп ГоРацион, 240 г" loading="lazy"><span>Гороховый крем-суп</span></a></li>
+      <li><a href="#dish" data-k="ragu"><img src="assets/labels/ragu-big.jpg" width="900" height="796" alt="Этикетка: гороховое рагу с овощами ГоРацион, 320 г" loading="lazy"><span>Гороховое рагу с овощами</span></a></li>
+    </ul>
 
     <div class="dish" id="dish">
       <div class="dish-tabs" role="tablist" aria-label="Выбор блюда">
@@ -99,10 +99,12 @@
         <div class="dish-info">
           <h3 id="dishName">Борщ</h3>
           <p class="dish-desc" id="dishDesc"></p>
-          <div class="sizes">
-            <div class="size"><b id="sizeBigW">160 г</b><span>4-5 порций</span><em id="sizeBigP"></em></div>
-            <div class="size"><b id="sizeSmallW">80 г</b><span>2-3 порции</span><em id="sizeSmallP"></em></div>
+          <div class="sizes" role="group" aria-label="Фасовка">
+            <button type="button" class="size is-on" data-s="big" aria-pressed="true"><b id="sizeBigW">160 г</b><span id="sizeBigN">4-5 порций</span><em id="sizeBigP"></em></button>
+            <button type="button" class="size" data-s="small" aria-pressed="false"><b id="sizeSmallW">80 г</b><span id="sizeSmallN">2-3 порции</span><em id="sizeSmallP"></em></button>
           </div>
+          <figure class="dish-label"><img id="dishLabel" src="assets/labels/borsch-big.jpg" width="900" height="796" alt="Этикетка блюда"></figure>
+          <p class="shelf">Срок годности 12 месяцев с даты изготовления. Хранить при температуре не выше 25 °C в защищённом от света месте.</p>
           <p class="nutri" id="dishNutri"></p>
           <ol class="steps-mini" id="dishSteps"></ol>
           <a class="btn btn-ember" href="https://ozon.ru/s/goratsion" target="_blank" rel="noopener">Купить на Озоне</a>
@@ -203,6 +205,7 @@
     <img src="assets/logo/logo2-light.svg" alt="ГоРацион" width="150" height="48">
     <p>Сухие наборы для горячих блюд в походе, на рыбалке, на даче и дома.</p>
     <p class="foot-c">+7 918 762 80 92 &nbsp; a.berchenko@yandex.ru</p>
+    <p class="foot-prod">Производитель: ИП Масюков А.А., г. Ставрополь, ул. Шевченко, 77</p>
   </div>
 </footer>
 

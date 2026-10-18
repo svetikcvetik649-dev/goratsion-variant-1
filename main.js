@@ -68,7 +68,7 @@
     harcho: {
       name: 'Харчо', video: 'assets/video/harcho.mp4', poster: 'assets/img/harcho-poster.jpg',
       desc: 'Густой пряный суп, который хорошо согревает после долгого дня на холоде. Готовится так же, как борщ.',
-      big: '180 г', bigP: '', small: '100 г', smallP: '286 ₽', nutri: '',
+      big: '180 г', bigP: '', small: '90 г', smallP: '286 ₽', nutri: '',
       steps: ['Высыпать пакет в холодную воду: пакет на 1 л готового блюда в 0,8-1 л, на 2 л в 1,8-2 л.', 'Дать постоять 5 минут.', 'Довести до кипения и варить 4-6 минут. Вместо воды можно взять готовый бульон.']
     },
     goroh: {
@@ -84,6 +84,8 @@
       steps: ['Часть пакета с овощами засыпать в холодную воду (большой в 1,8 л, малый в 0,9 л), подождать 5 минут.', 'Варить на среднем огне 4-6 минут.', 'Постоянно помешивая, внести вторую часть пакета и мешать до однородной массы. Соль, специи и тушёнку добавить по вкусу.']
     }
   };
+  var PORTIONS = { borsch: ['4-5 порций', '2-3 порции'], harcho: ['4-5 порций', '2-3 порции'], goroh: ['4 порции', '2 порции'], ragu: ['4-5 порций', '2-3 порции'] };
+  var curDish = 'borsch';
   var video = $('#dishVideo'), clip = $('.clip'), info = $('.dish-info');
   var tabs = $$('.dish-tabs button');
 
@@ -95,6 +97,8 @@
     $('#sizeBigW').textContent = d.big;
     $('#sizeSmallW').textContent = d.small;
     $('#sizeBigP').textContent = d.bigP || 'цена на Озоне'; $('#sizeSmallP').textContent = d.smallP || 'цена на Озоне';
+    $('#sizeBigN').textContent = PORTIONS[k][0]; $('#sizeSmallN').textContent = PORTIONS[k][1];
+    curDish = k; showLabel('big');
     var n = $('#dishNutri'); n.textContent = d.nutri; n.style.display = d.nutri ? '' : 'none';
     $('#dishSteps').innerHTML = d.steps.map(function (s) { return '<li><span>' + s + '</span></li>'; }).join('');
     video.poster = d.poster;
@@ -103,6 +107,14 @@
     playIfVisible();
     if (animate) { info.classList.remove('swap'); void info.offsetWidth; info.classList.add('swap'); }
   }
+  function showLabel(which) {
+    var lab = $('#dishLabel'), sb = $$('.size');
+    lab.src = 'assets/labels/' + curDish + '-' + which + '.jpg';
+    lab.alt = 'Этикетка: ' + DISHES[curDish].name + ', ' + (which === 'big' ? DISHES[curDish].big : DISHES[curDish].small);
+    sb.forEach(function (s) { var on = s.dataset.s === which; s.classList.toggle('is-on', on); s.setAttribute('aria-pressed', String(on)); });
+  }
+  $$('.size').forEach(function (s) { s.addEventListener('click', function () { showLabel(s.dataset.s); }); });
+  $$('.labels a').forEach(function (a) { a.addEventListener('click', function () { setDish(a.dataset.k, true); }); });
   tabs.forEach(function (b) { b.addEventListener('click', function () { setDish(b.dataset.k, true); }); });
 
   var userPaused = false;
