@@ -280,3 +280,4 @@ button.size.is-on{border-color:var(--color-pine)}
 .story-fig figcaption{margin-top:8px;font-size:.92rem;color:var(--color-ink-soft)}
 .story-lead{grid-area:lead}.story-text{grid-area:text}
 @media (max-width:900px){.story-cols{grid-template-areas:"fig" "lead" "text"}}
+.logo-white{filter:brightness(0) invert(1)}
