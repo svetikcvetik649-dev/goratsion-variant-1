@@ -103,8 +103,7 @@
     $('#dishDesc').textContent = d.desc;
     $('#sizeBigW').textContent = d.big;
     $('#sizeSmallW').textContent = d.small;
-    $('#sizeBigP').innerHTML = (d.bigP || 'цена на Озоне') + ' на Озоне<br>' + d.direct[0] + ' напрямую';
-    $('#sizeSmallP').innerHTML = (d.smallP || 'цена на Озоне') + ' на Озоне<br>' + d.direct[1] + ' напрямую';
+    $('#sizeBigP').textContent = d.direct[0]; $('#sizeSmallP').textContent = d.direct[1];
     $('#sizeBigN').textContent = PORTIONS[k][0]; $('#sizeSmallN').textContent = PORTIONS[k][1];
     curDish = k; showLabel('big');
     var c = $('#dishCompos'); c.innerHTML = '<b>Состав:</b> ' + d.compos;
