@@ -59,7 +59,7 @@
     harcho: {
       name: 'Харчо', video: 'assets/video/harcho.mp4', poster: 'assets/img/harcho-poster.jpg',
       desc: 'Густой пряный суп, который хорошо согревает после долгого дня на холоде. Готовится так же, как борщ.',
-      big: '180 г', bigP: '', small: '100 г', smallP: '286 ₽', ozonBig: 'https://ozon.ru/t/uk2n2rv', ozonSmall: 'https://ozon.ru/t/zLXD8JQ', nutri: '',
+      big: '180 г', bigP: '193 ₽', small: '100 г', smallP: '286 ₽', ozonBig: 'https://ozon.ru/t/uk2n2rv', ozonSmall: 'https://ozon.ru/t/zLXD8JQ', nutri: '',
       steps: ['Высыпать пакет в холодную воду: пакет на 1 л готового блюда в 0,8-1 л, на 2 л в 1,8-2 л.', 'Дать постоять 5 минут.', 'Довести до кипения и варить 4-6 минут. Вместо воды можно взять готовый бульон.']
     },
     goroh: {
