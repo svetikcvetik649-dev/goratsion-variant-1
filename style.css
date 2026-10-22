@@ -342,3 +342,5 @@ button.size.is-on{border-color:var(--color-pine)}
 .alt-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--color-ember)}
 @media (max-width:900px){.altimeter{display:none}}
 .why .lead{color:#cfe0d8;margin-top:6px}
+
+.size em{font-size:1.2rem;line-height:1.25}
