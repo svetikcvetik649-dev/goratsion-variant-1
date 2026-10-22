@@ -119,6 +119,8 @@
     var lab = $('#dishLabel'), sb = $$('.size');
     lab.src = 'assets/labels/' + curDish + '-' + which + '.jpg';
     lab.alt = 'Этикетка: ' + DISHES[curDish].name + ', ' + (which === 'big' ? DISHES[curDish].big : DISHES[curDish].small);
+    var ord = $('#dishOrder');
+    if (ord) ord.href = 'https://wa.me/79187628092?text=' + encodeURIComponent('Здравствуйте! Хочу заказать: ' + DISHES[curDish].name + ', ' + (which === 'big' ? DISHES[curDish].big : DISHES[curDish].small) + ' (' + (which === 'big' ? DISHES[curDish].direct[0] : DISHES[curDish].direct[1]) + '). Доставка СДЭКом, город: ');
     var buy = $('#dishBuy'); if (buy) buy.href = which === 'big' ? DISHES[curDish].ozonBig : DISHES[curDish].ozonSmall;
     sb.forEach(function (s) { var on = s.dataset.s === which; s.classList.toggle('is-on', on); s.setAttribute('aria-pressed', String(on)); });
   }

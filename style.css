@@ -344,3 +344,5 @@ button.size.is-on{border-color:var(--color-pine)}
 .why .lead{color:#cfe0d8;margin-top:6px}
 
 .size em{font-size:1.2rem;line-height:1.25}
+
+.dish-info #dishOrder,.dish-info #dishBuy{margin:0 10px 10px 0}
