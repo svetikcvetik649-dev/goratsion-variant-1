@@ -173,7 +173,7 @@ h3{font-weight:600;line-height:1.05}
 .msg{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-family:var(--font-display);font-weight:600;font-size:1.3rem;line-height:1;padding:.55em 1em .5em;border-radius:99px;text-decoration:none;color:var(--color-white);transition:transform .25s var(--ease-out),filter .25s}
 .msg svg{width:22px;height:22px}
 .msg:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.msg-tg{background:#229ed9}.msg-max{background:#5b3df5}.msg-wa{background:#1fa855}
+.msg-tg{background:#229ed9}.msg-max{background:#5b3df5}.msg-wa{background:#1fa855}.msg-vk{background:#0077ff}
 .direct-mail{display:block;font-family:var(--font-display);font-weight:500;font-size:1.5rem;color:var(--color-ink);text-decoration:none;word-break:break-word}
 .direct-mail:hover{text-decoration:underline}
 .direct-note{margin-top:10px;font-size:.92rem!important}
@@ -233,7 +233,7 @@ h3{font-weight:600;line-height:1.05}
 /* блик: яркая белая полоса пробегает по плашкам */
 .btn,.msg,.sticky-buy,.dish-tabs button[aria-selected="true"],.size{position:relative;overflow:hidden;isolation:isolate}
 .btn::after,.msg::after,.sticky-buy::after,.dish-tabs button[aria-selected="true"]::after,.size::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:45%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.15) 30%,rgba(255,255,255,.85) 50%,rgba(255,255,255,.15) 70%,transparent 100%);transform:translateX(-130%) skewX(-18deg);animation:shine 3.8s ease-in-out infinite;pointer-events:none;z-index:1}
-.msg-max::after{animation-delay:.5s}.msg-wa::after{animation-delay:1s}
+.msg-max::after{animation-delay:.5s}.msg-wa::after{animation-delay:1s}.msg-vk::after{animation-delay:1.5s}
 .btn-lg::after{animation-delay:.3s}.sticky-buy::after{animation-delay:1.2s}
 .size:nth-child(2)::after{animation-delay:.6s}
 .size::after{background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.1) 30%,rgba(255,255,255,.5) 50%,rgba(255,255,255,.1) 70%,transparent 100%)}
