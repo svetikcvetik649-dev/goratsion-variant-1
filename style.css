@@ -332,3 +332,4 @@ button.size.is-on{border-color:var(--color-pine)}
 .doc ul{margin:0 0 14px;padding-left:1.2em;list-style:disc}
 .doc li{margin-bottom:6px}
 .doc a{color:var(--color-sky-deep);text-underline-offset:3px}
+.compos{font-size:.95rem;color:var(--color-ink-soft);margin:0 0 10px;max-width:56ch}.compos b{color:var(--color-ink)}
