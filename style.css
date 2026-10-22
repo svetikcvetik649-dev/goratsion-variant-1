@@ -333,3 +333,12 @@ button.size.is-on{border-color:var(--color-pine)}
 .doc li{margin-bottom:6px}
 .doc a{color:var(--color-sky-deep);text-underline-offset:3px}
 .compos{font-size:.95rem;color:var(--color-ink-soft);margin:0 0 10px;max-width:56ch}.compos b{color:var(--color-ink)}
+
+/* высотомер */
+.altimeter{position:fixed;right:clamp(10px,1.4vw,24px);bottom:24px;z-index:40;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);box-shadow:0 8px 24px -12px rgba(11,47,39,.5);font-family:var(--font-display);pointer-events:none}
+.altimeter b{font-size:1.5rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--color-pine)}
+.altimeter span{font-size:.95rem;font-weight:500;color:var(--color-ink-soft);line-height:1.05;max-width:8ch}
+.alt-track{position:relative;width:46px;height:5px;border-radius:5px;background:rgba(16,38,31,.15);overflow:hidden}
+.alt-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--color-ember)}
+@media (max-width:900px){.altimeter{display:none}}
+.why .lead{color:#cfe0d8;margin-top:6px}

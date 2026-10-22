@@ -5,16 +5,25 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
 
+  var altFill = $('#altFill'), altNum = $('#altNum');
   var heroImg = $('#heroImg');
   var stage = $('#cookStage'), track = $('.cook-track');
   var frames = $$('.fr'), badge = $('#cookBadge'), bar = $('#cookBar');
   var storyImg = $('#storyPhoto img');
   var sticky = $('.sticky-buy');
+  var MAX_ALT = 5642; // высота Эльбруса
   var ticking = false;
+
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
 
   function update() {
     ticking = false;
     var y = window.scrollY, h = window.innerHeight;
+    var docH = document.documentElement.scrollHeight - h;
+    var p = docH > 0 ? clamp(y / docH, 0, 1) : 0;
+
+    altFill.style.width = (p * 100) + '%';
+    altNum.textContent = fmt(Math.round(p * MAX_ALT));
 
     if (!reduce && heroImg && y < h * 1.2) {
       heroImg.style.transform = 'translate3d(0,' + (y * 0.18).toFixed(1) + 'px,0) scale(' + (1 + y / h * 0.04).toFixed(3) + ')';
