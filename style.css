@@ -355,3 +355,8 @@ button.size.is-on{border-color:var(--color-pine)}
 @media (max-width:900px){.trips-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .docs-thumb-doc{max-width:380px;margin:18px 0 8px}
+
+/* оффер на первом экране */
+.hero-in>.hero-offer{order:4;align-self:center;margin:14px 20px 96px;padding:.5em 1.3em .45em;border-radius:99px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;font-family:var(--font-display);font-size:1.35rem;line-height:1.15;text-align:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hero-offer b{color:var(--color-gold);font-weight:700}
+@media (max-width:520px){.hero-in>.hero-offer{font-size:1.15rem;margin:12px 14px 100px}}
