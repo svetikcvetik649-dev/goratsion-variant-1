@@ -404,3 +404,17 @@ button.size.is-on{border-color:var(--color-pine)}
 .ship-note{margin-top:24px;font-size:.95rem;color:var(--color-ink-soft)}
 .ship-note a{color:var(--color-sky-deep);text-underline-offset:3px}
 @media (max-width:900px){.ship-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* выбор мессенджера для заказа */
+.order-menu{position:fixed;inset:0;z-index:210;background:rgba(7,22,18,.7);display:flex;align-items:center;justify-content:center;padding:16px}
+.order-menu[hidden]{display:none}
+.om-box{position:relative;background:var(--color-white);border-radius:22px;padding:26px 24px 22px;width:min(440px,100%);box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.om-box h3{font-size:2.2rem;color:var(--color-pine);padding-right:36px}
+.om-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border:0;border-radius:50%;background:var(--color-mist);color:var(--color-ink);font-size:1.6rem;line-height:1;cursor:pointer}
+.om-what{font-weight:700;color:var(--color-ink);margin:4px 0 6px}
+.om-hint{font-size:.95rem;color:var(--color-ink-soft);margin-bottom:12px}
+.om-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.om-btn{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:14px;color:#fff;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:1.35rem;padding:.2em .6em}
+.om-wa{background:#1fa855}.om-tg{background:#229ed9}.om-max{background:#5b3df5}.om-vk{background:#0077ff}.om-tel{background:var(--color-pine)}.om-mail{background:var(--color-ink-soft)}
+.om-copied{margin-top:14px;font-size:.92rem;color:var(--color-ember-deep);font-weight:500}
+@media (max-width:420px){.om-list{grid-template-columns:1fr}}

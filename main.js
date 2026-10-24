@@ -188,5 +188,36 @@
       if (Math.abs(dx) > 50) lbShow(gi + (dx < 0 ? 1 : -1));
     });
   }
+
+  // заказ напрямую: выбор мессенджера
+  var om = $('#orderMenu'), ordBtn = $('#dishOrder'), omText = '';
+  function orderState() {
+    var which = $('.size.is-on') ? $('.size.is-on').dataset.s : 'big';
+    var d = DISHES[curDish];
+    var w = which === 'big' ? d.big : d.small, p = which === 'big' ? d.direct[0] : d.direct[1];
+    return { line: d.name + ', ' + w + ' (' + p + ')' };
+  }
+  function openOrder() {
+    var o = orderState();
+    omText = 'Здравствуйте! Хочу заказать: ' + o.line + '. Доставка СДЭКом, город: ';
+    $('#omWhat').textContent = o.line;
+    $('#omWa').href = 'https://wa.me/79187628092?text=' + encodeURIComponent(omText);
+    $('#omMail').href = 'mailto:info.goracion@mail.ru?subject=' + encodeURIComponent('Заказ ГоРацион') + '&body=' + encodeURIComponent(omText);
+    $('#omCopied').hidden = true;
+    om.hidden = false; document.body.style.overflow = 'hidden';
+  }
+  function closeOrder() { om.hidden = true; document.body.style.overflow = ''; }
+  if (om && ordBtn) {
+    ordBtn.addEventListener('click', function (e) { e.preventDefault(); openOrder(); });
+    $('#omClose').addEventListener('click', closeOrder);
+    om.addEventListener('click', function (e) { if (e.target === om) closeOrder(); });
+    document.addEventListener('keydown', function (e) { if (!om.hidden && e.key === 'Escape') closeOrder(); });
+    $$('.om-btn[data-copy]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        try { if (navigator.clipboard) navigator.clipboard.writeText(omText).catch(function () {}); } catch (err) {}
+        $('#omCopied').hidden = false;
+      });
+    });
+  }
   setDish('borsch', false);
 })();
