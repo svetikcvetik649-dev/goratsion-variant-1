@@ -202,7 +202,7 @@
     omText = 'Здравствуйте! Хочу заказать: ' + o.line + '. Доставка СДЭКом, город: ';
     $('#omWhat').textContent = o.line;
     $('#omWa').href = 'https://wa.me/79187628092?text=' + encodeURIComponent(omText);
-    $('#omMail').href = 'mailto:info.goracion@mail.ru?subject=' + encodeURIComponent('Заказ ГоРацион') + '&body=' + encodeURIComponent(omText);
+    $('#omMail').href = 'mailto:info@goracion.ru?subject=' + encodeURIComponent('Заказ ГоРацион') + '&body=' + encodeURIComponent(omText);
     $('#omCopied').hidden = true;
     om.hidden = false; document.body.style.overflow = 'hidden';
   }
